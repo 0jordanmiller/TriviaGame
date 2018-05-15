@@ -1,0 +1,39 @@
+body {
+	background:	url(../images/background.jpg);
+}
+
+* {
+	font-family: 'Metal Mania', cursive;
+
+}
+
+h1 {
+	font-size: 50px;
+}
+
+p {
+	font-size: 24px;
+}
+
+li {
+	font-size: 24px;
+}
+
+#text-box {
+	position: relative;
+	top: 100px;
+	text-align: center;
+	color: black;
+	font-family: 'Metal Mania', cursive;
+
+}
+
+#trivia-box {
+	position: relative;
+	top: 100px;
+	height: 400px;
+	width: 700px;
+	margin: auto;
+	background: #7a000b;
+	border: dashed black;
+}
