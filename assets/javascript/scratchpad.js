@@ -43,3 +43,71 @@ if (question1) {
 }
 
 }
+
+<!-- <div id="text-box">
+		<h1>Metal Trivia</h1>
+		<br>
+		<div id="timer">
+			<p>Time Left:</p> 
+		</div>
+		<div id="game">
+			<div id="question"><br>
+				<p>Question</p>
+			</div>
+			<div id="answer"> <br>
+				<ul>
+					<li>a</li>
+					<li>b</li>
+					<li>c</li>
+					<li>d</li>
+				</ul>
+			</div>
+		</div>
+	</div> -->
+
+<!-- 	<div id="timer">
+			Time Left: 30
+			</div>
+			<div id="question"><br>
+			</div>
+			<div><br>
+				<ul id="answers">
+					<li id="1"></li>
+					<li id="2"></li>
+					<li id="3"></li>
+					<li id="4"></li>
+				</ul>
+			</div> -->
+
+
+
+
+game.on('click', '.answer', function() {
+	if ($(this).text() === question1.correct || $(this).text() === question2.correct || $(this).text() === question3.correct || $(this).text() ===  question4.correct) {
+		clearInterval(intervalId);
+		game.html(correctTemp);
+		rightAns++;
+		setTimeout(nextQuestion, 1000 * 6);
+		var randomGif = Math.floor(Math.random() * gifsArr.length);
+		$("#gif").html('<img id="gif-img">');
+		$("#gif-img").attr('src', gifsArr[randomGif]);
+		$("#correct-answer").append('The correct answer is ' + correctAnswer);
+	} else if ($(this).text() === 'Ozzy Osbourne') {
+		correctAnswer = question2.correct;
+		clearInterval(intervalId);
+		game.html(correctTemp);
+		rightAns++;
+		setTimeout(nextQuestion, 1000 * 6);
+		var randomGif = Math.floor(Math.random() * gifsArr.length);
+		$("#gif").html('<img id="gif-img">');
+		$("#gif-img").attr('src', gifsArr[randomGif]);
+	} else {
+		clearInterval(intervalId);
+		game.html(incorrectTemp);
+		var randomGif = Math.floor(Math.random() * gifsArr.length);
+		$("#gif").html('<img id="gif-img">');
+		$("#gif-img").attr('src', gifsArr[randomGif])
+		wrongAns++;
+		setTimeout(nextQuestion, 1000 * 6)
+	}
+})
